@@ -8,6 +8,6 @@ for x in range(1,len(a)):
     sot = False
     break
 if sot:
-  print("list is sorted")
+  print("array is sorted")
 else:
-  print("list is not sorted")
+  print("array is not sorted")
