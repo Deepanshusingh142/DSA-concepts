@@ -1,42 +1,59 @@
-#stack 
-#oprations
-# 1 pop 
-# 2 push
-# 3 peek
-# 4 is empty
-# 5 size
 
+#stack
 stack = []
-stack_size = 6
+size_of_stack = 5
+# peek = stack[-1]
+
+
+
 def push(value):
-    if  size() < stack_size:
-        stack.append(value)
-    else:
-        print("stack have no space ",size(),"elements in stack")
-def pop():
-    if is_empty():
-        print("stack in empty ")
-    else:
-        return stack.pop()
-
-def peek():
-    if is_empty():
-        print("stack is empty")
-    else:
-        return print(stack[-1])
+  if len(stack) < size_of_stack:
+    stack.append(value)
     
-def is_empty():
-    return len(stack)==0
+    print(f"peek element is {stack[-1]} ")
+  else:
+    is_empty() == False
+    print("stack is over flow")
 
-def size():
-    return len(stack)
+def is_empty():
+  if len(stack)== 0:
+      print("stack is empty")
+      return True
+  else:
+      print("stack is not empty")
+      return False
+def pop():
+  if is_empty() == False:
+    remove = stack.pop()
+    print(f"this is your peek element {remove}")
+    return remove
+  else:
+    print(f"this is your next element that you can remove  {remove}")
+  
 
 while True:
-    if size() < stack_size:
+  if len(stack) < size_of_stack:
+    x =int(input("enter number the stack have space"))
+    push(x)
+  else:
+    print("stack is full")
+    break
 
-        x =int(input("enter nuber"))
-        push(x)
+option = (str.upper(input("do you want empty the ement")))
+if option == "YES" or option == "Y":
+  while True:
+    
+    if len(stack) == 0:
+      print("now your stack is empty")
+      break
     else:
-        print("stack is full and the top element is ",stack[-1])
-        break
+      
+      print(f"romove this element for now {pop()}")
+else:
+  print(f"ok sir your stack have {len(stack)}")
+
+print(is_empty())
+print(stack)
+
+
 
